@@ -164,15 +164,17 @@ class LinkedList {
     } else if (!this.head) {
       return null;
     }
-    let current = this.head;
+    let current ;
     let previous;
     let count = 0;
+
+    current = this.head;
     if (index === 0) {
       this.head = current.next;
     } else {
       while (count < index) {
-        count++;
         previous = current;
+        count++;
         current = current.next;
       }
       previous.next = current.next;
@@ -218,8 +220,8 @@ list.tailValue(); // shows tail value
 console.log(list.contains(400)); // checks if the linked list contains the value in it, if yes returns true if no false
 list.findValue(400); // checks if value exists in the linked list, if yes returns its index, if no returns null
 list.atIndex(2); // returns a node at the given index
-list.insertAt(500, 10); // inserts a node at the given index
-list.removeAtIndex(11); // remove a node at the given index, if index doesn't exist returns nothing
+list.insertAt(500, 0); // inserts a node at the given index
+list.removeAtIndex(1); // remove a node at the given index, if index doesn't exist returns nothing
 list.printListData(); // prints list datas
 list.toString(); // converts the values to string
 list.sizeList(); // shows the size of the list like length
