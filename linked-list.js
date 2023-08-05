@@ -132,8 +132,33 @@ class LinkedList {
     return null;
   }
 
-  removeAtIndex(index) {
+  insertAt(data, index) {
+    if (index > 0 && index > this.size) {
+      return null;
+    }
+    if (index === 0) {
+      this.head = new Node(data, this.head);
+      return;
+    }
+    const node = new Node(data);
+    let current;
+    let previous;
+    let count = 0;
 
+    current = this.head;
+
+    while (count < index) {
+      previous = current;
+      count++;
+      current = current.next;
+    }
+    node.next = current;
+    previous.next = node;
+
+    this.size++;
+  }
+
+  removeAtIndex(index) {
     if (index > 0 && index > this.size) {
       return;
     } else if (!this.head) {
@@ -141,7 +166,7 @@ class LinkedList {
     }
     let current = this.head;
     let previous;
-    let count = 0
+    let count = 0;
     if (index === 0) {
       this.head = current.next;
     } else {
@@ -152,7 +177,7 @@ class LinkedList {
       }
       previous.next = current.next;
     }
-    this.size--
+    this.size--;
   }
 
   toString() {
@@ -187,12 +212,13 @@ list.pop(); // pops the last value the linked list
 list.pop(); // pops the last value the linked list
 list.pop(); // pops the last value the linked list
 list.pop(); // pops the last value the linked list
-list.pop(); // pops the last value the linked list
+// list.pop(); // pops the last value the linked list
 list.headValue(); // shows head value
 list.tailValue(); // shows tail value
 console.log(list.contains(400)); // checks if the linked list contains the value in it, if yes returns true if no false
 list.findValue(400); // checks if value exists in the linked list, if yes returns its index, if no returns null
 list.atIndex(2); // returns a node at the given index
+list.insertAt(500, 10); // inserts a node at the given index
 list.removeAtIndex(11); // remove a node at the given index, if index doesn't exist returns nothing
 list.printListData(); // prints list datas
 list.toString(); // converts the values to string
