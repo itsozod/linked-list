@@ -42,7 +42,7 @@ class LinkedList {
   tailValue() {
     let listHead = this.head;
 
-    if (!this.head) {
+    if (!listHead) {
       return null;
     }
 
@@ -187,12 +187,13 @@ list.pop(); // pops the last value the linked list
 list.pop(); // pops the last value the linked list
 list.pop(); // pops the last value the linked list
 list.pop(); // pops the last value the linked list
-list.headValue(); // shows head value which is 400
-list.tailValue(); // shows tail value which is 100
+list.pop(); // pops the last value the linked list
+list.headValue(); // shows head value
+list.tailValue(); // shows tail value
 console.log(list.contains(400)); // checks if the linked list contains the value in it, if yes returns true if no false
 list.findValue(400); // checks if value exists in the linked list, if yes returns its index, if no returns null
 list.atIndex(2); // returns a node at the given index
-list.removeAtIndex(11); // remove a node at the given index
+list.removeAtIndex(11); // remove a node at the given index, if index doesn't exist returns nothing
 list.printListData(); // prints list datas
 list.toString(); // converts the values to string
 list.sizeList(); // shows the size of the list like length
