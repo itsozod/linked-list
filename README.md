@@ -16,4 +16,5 @@ Linked list JS
  <li><code>find(value)</code> returns the index of the node containing value, or null if not found.</li>
  <li><code>toString</code> represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: <code>( value ) -> ( value ) -> ( value ) -> null</code></li>
  <li><code>removeAt</code>removing a node at the given index</li>
+ <li><code>insertAt</code>inserting a node at the given index</li>
  </ol>
